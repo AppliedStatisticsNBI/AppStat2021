@@ -1,6 +1,6 @@
 # Applied Statistics 2021 - Code Repository
 
-This git is a repository of the code that will be used in the Applied Statistics code 2020/21 edition.
+This git is a repository of the code that will be used in the Applied Statistics code 2021/22 edition.
 
 ## Getting Started
 
