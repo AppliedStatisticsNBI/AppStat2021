@@ -1,6 +1,8 @@
 # Applied Statistics 2021 - Code Repository
 
 This git is a repository of the code that will be used in the Applied Statistics code 2021/22 edition.
+*	[Course Main page](https://www.nbi.dk/~petersen/Teaching/AppliedStatistics2021.html)
+
 
 ## Getting Started
 
@@ -42,8 +44,3 @@ If you do not want to subscribe to github, you can still download manually the c
 
 Once you have installed the required software and cloned the repository, you can run your notebooks, and update the content of the repository by following [__these instructions__](./docs/running_after_install.md)
 
-
----
-## Link to Course Information
-
-*	[Course Main page](https://www.nbi.dk/~petersen/Teaching/AppliedStatistics2021.html)
