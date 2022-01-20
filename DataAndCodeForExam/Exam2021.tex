@@ -1,0 +1,231 @@
+\documentclass[11pt]{article}
+
+\usepackage[latin1]{inputenc}
+\usepackage[danish]{babel}        % Use English headings, date format.
+\usepackage{a4wide}               % A4 (DIN format).
+\usepackage[hidelinks]{hyperref}  % Enable direct links in PDF (e.g. for data sets)
+
+\textheight=1.10\textheight
+\textwidth=1.10\textwidth
+\hoffset=-0.05\textwidth
+\leftmargin=-0.18\textwidth
+\headsep=0.0pt
+\headheight=0.0pt
+
+\vfuzz2pt   % Don't report over-full v-boxes if over-edge is small
+\hfuzz10pt  % Don't report over-full h-boxes if over-edge is smallish
+
+\newcommand{\half}{\mbox{$\frac{1}{2}$}}
+
+\begin{document}
+%\pagestyle{empty}
+
+%----------------------------------------------------------------------------
+\noindent
+University of Copenhagen \hfill
+Niels Bohr Institute, \today \par
+\vspace{-2ex}
+\noindent
+\hrulefill
+
+\vspace{1ex}
+\begin{center}
+{\bf {\Huge Applied Statistics}}\\
+\vspace{1ex}
+{\large Exam in applied statistics 2021/22}
+\end{center}
+
+%----------------------------------------------------------------------------
+\vspace{0ex}
+\noindent
+This take-home exam was distributed Thursday the 20th of January 2022 at 08:00, and a solution in PDF format must be submitted at \texttt{www.eksamen.ku.dk} by 20:00 sharp Friday the 21st of January 2022, along with all code used to work out your solutions (as appendix). Links to data files can be found on the course webpage. Working in groups or discussing the problems with others is {\bf NOT} allowed.
+
+\vspace{-1ex}
+\begin{center}
+  Good luck and thanks for all your hard work, Clara, Kate, Vadim, Irene, Mathias, \& Troels.
+\end{center}
+
+%----------------------------------------------------------------------------
+
+\noindent
+\hrulefill\\
+\emph{Science may be described as the art of systematic oversimplification.}\\
+  \phantom{foobar} \hfill [Karl Popper, Austrian/British philosopher 1902-1994]\\[-2ex]
+
+%----------------------------------------------------------------------------
+\vspace{-2ex}
+\noindent
+\hrulefill
+
+\vspace{4ex}
+\noindent
+{\bf I -- Distributions and probabilities:}
+\begin{description}
+  \item[1.1] (7 points)
+  Your friend tells you, that a bag contains 3 white, 5 black, and 7 grey marbles.
+  \vspace*{-1ex}
+  \begin{itemize}
+  \item If you take two random marbles without putting them back, what is the probability that at
+    least one of them is white?
+    \item If you pick a marble, record its color, and then put it back 25 times independently,
+      what is the probability of getting exactly 18 grey marbles? At least 18 grey marbles?
+    \item If you got 18 grey marbles out of 25 picks, would you trust your friend's information?
+  \end{itemize}
+%
+  \item[1.2] (3 points)
+    The lifetime $L$ of a certain component is exponentially distributed: $L(t) = 1/\tau \exp(-t/\tau)$.
+    If there is a 4\% chance of this component lasting more than 500 hours, what is the value of $\tau$?
+%
+  \item[1.3] (5 points)
+   A radio telescope detects 241089 signals/day, based on a 9 week observation campaign.
+   \vspace*{-4ex}
+   \begin{itemize}
+     \item One hour, they receive 9487 signals. What is the chance of observing \emph{exactly} this number?
+     \item Is this observation extraordinary, based on an estimate of its \emph{general} probability?
+   \end{itemize}
+%
+  \item[1.4] (7 points)
+  Shooting with a bow, you have 3\% chance of hitting a certain target.
+  \vspace*{-1ex}
+  \begin{itemize}
+    \item What distribution is the number of hits going to follow, given $N$ shots?
+    \item What is the probability that the first hit will come after 20 shots?
+    \item What is the probability that it will take more than 4000 shots to hit the target 100 times?
+  \end{itemize}
+\end{description}
+
+
+
+%----------------------------------------------------------------------------
+
+\vspace{2ex}
+\noindent
+{\bf II -- Error propagation:}
+\begin{description}
+\item[2.1] (9 points)
+  Let $x = 1.92 \pm 0.39$ and $y = 3.1 \pm 1.3$, and let $z_1 = y/x$, and $z_2 = cos(x) \cdot x/y$.
+  \vspace*{-1ex}
+  \begin{itemize}
+    \item What are the uncertainties of $z_1$ and $z_2$, if $x$ and $y$ are uncorrelated?
+    \item If $x$ and $y$ were highly correlated ($\rho_{xy} = 0.9$), what would be the uncertainty on $z_1$?
+    \item Which of the (uncorrelated) variables $x$ and $y$ contributes most to the uncertainty on $z_2$?
+  \end{itemize}
+%
+  \item[2.2] (7 points)
+    Five patients were given a drug to test if they slept longer (in hours). Their results were:
+    $+3.7, -1.2 , -0.2 , +0.7, +0.8$. A Placebo group got the results: $+1.5, -1.0 , -0.7, +0.5, +0.1$.
+  \vspace*{-1ex}
+  \begin{itemize}
+    \item Estimate the mean, standard deviation, and the uncertainty on the mean for drug group.
+    \item What is the probability that the drug group slept longer than the placebo group?
+  \end{itemize}
+\end{description}
+
+
+
+%----------------------------------------------------------------------------
+\newpage
+
+\noindent
+{\bf III -- Simulation / Monte Carlo:}
+\begin{description}
+  \item[3.1] (10 points)
+    Assume $f(x) = C x^a \sin(\pi x)$ for $x \in [0,1]$ and $a=3$ is a theoretical distribution.
+  \vspace*{-1ex}
+  \begin{itemize}
+    \item By what method(s) would you generate random numbers according to $f(x)$?
+    \item Determine (possibly numerically) the value of $C$ for $f(x)$ to be normalised.
+    \item Fit a histogram with values from $f(x)$ and determine how many measurements (i.e.\ values of $x$)
+      you need in an experiment to determine the value of $a$ with 1\% precision.
+  \end{itemize}
+\end{description}
+
+
+%----------------------------------------------------------------------------
+
+\noindent
+{\bf IV -- Statistical tests:}
+\begin{description}
+\item[4.1] (12 points)
+  You measure the grip strength ($G$ in Newton $N$) in the dominant and non-dominant hands of 84 persons, summarised in the file \href{http://www.nbi.dk/~petersen/data\_GripStrength.txt}{\bf www.nbi.dk/$\sim$petersen/data\_GripStrength.txt}, to determine if there is a difference.
+  \vspace*{-1ex}
+  \begin{itemize}
+    \item What fraction of the test persons were right (dominant hand = 1) handed?
+    \item What is the mean and standard deviation of the dominant and non-dominant grip strengths?
+    \item Are the means of the two distributions compatible or different?
+    \item What is the mean and standard deviation of the individual differences in grip strengths?
+    \item Is there a statistically significant difference in grip strengths between hands?
+  \end{itemize}
+%
+\item[4.2] (14 points)
+  From microscope images, you measure size ($S$ in $\mu$m) and intensity ($I$) of large molecules in a sample,
+  contained in the file \href{http://www.nbi.dk/~petersen/data\_MoleculeTypes.txt}{\bf www.nbi.dk/$\sim$petersen/data\_MoleculeTypes.txt}.
+  \vspace*{-1ex}
+  \begin{itemize}
+    \item Does the molecule size follow a Gaussian distribution? How about when requiring $I > 0.50$?
+    \item Suspecting two different type of molecules, fit the size distribution with two Gaussians.
+    \item Assuming that the double Gaussian fit is good, what size should you require, to get a
+      90\% clean sample of the new molecule? And how many molecules would you then have?
+    \item Including the intesity information, how large a 90\% pure sample of the new molecule do you
+      think, that you can obtain?
+  \end{itemize}
+\end{description}
+
+
+
+%----------------------------------------------------------------------------
+
+%\vspace{2ex}
+\noindent
+{\bf V -- Fitting data:}
+\begin{description}
+\item[5.1] (12 points)
+  You are studying the growth of an algae type, by considering the area it covers ($A$ in $\mbox{cm}^2$)
+  as a function of time ($t$ in days):
+  \href{http://www.nbi.dk/~petersen/data\_AlgieGrowth.txt}{\bf www.nbi.dk/$\sim$petersen/data\_AlgieGrowth.txt}.
+  The initially assumed uncertainty on $A$ is $\sigma_A = 45 \mbox{cm}^2$.
+  \vspace{-1.0ex}
+  \begin{itemize}
+    \item Plot the data, and fit it with a third degree polynomial. Is the fit good?
+    \item Do a runs test on the fit residuals. Does the data seem randomly distributed around the fit?
+    \item You suspect, that there is a day/night variation. Include a multiplicative small oscillation term in
+      your fit, and see if you can improve on the fit and the runs test p-value.
+    \item Is it realistic that the uncertainties are in reality about half of those stated?
+  \end{itemize}
+%
+\item[5.2] (14 points)
+  In the centennial of Bohr's Nobel prize, you decide to test his atomic model, and measure the spectral
+  lines of hydrogen in the infrared spectrum 1200-2200nm, where you would expect to see some of the
+  $n_1 = 3$ and $n_1 = 4$ lines for $\frac{1}{\lambda} = R_{\infty} \left( \frac{1}{n_1^2} - \frac{1}{n_2^2} \right)$,
+  where $R_{\infty} = 1.09677 \times 10^7 \mbox{m}^{-1}$.
+  Your measurements are in the file \href{http://www.nbi.dk/~petersen/data\_BohrHypothesis.txt}{\bf www.nbi.dk/$\sim$petersen/data\_BohrHypothesis.txt}, where you have recorded wavelength ($\lambda$ in nm) and supply voltage ($U$ in V).
+  \vspace*{-1ex}
+  \begin{itemize}
+    \item Fit the two prominent known $n_1 = 3$ peaks, which should be at 1875.637nm and 1282.174nm.
+    \item Are the two peaks Gaussian? And if you assume so, are their resolutions consistent?
+    \item Given your observed peak positions, how would you (linearly) calibrate the scale?
+    \item See how many (significant) peaks beyond the two $n_1 = 3$ peaks you can find.
+    \item Test if their (calibrated) positions follow the Bohr hypothesis.
+    \item You find that your measurements were affected by the supply current. Using the two $n_3$ peaks,
+      calibrate for the variation in supply current.
+      % , and possibly repeat the above questions.
+  \end{itemize}
+\vspace*{-2ex}
+\end{description}
+
+
+%----------------------------------------------------------------------------
+
+% \noindent
+% \hrulefill\\
+% \emph{Don't worry too much about statistics! Just tell us what you do, and do what you tell us.}\\
+% \phantom{foobar} \hfill [Roger Barlow, ICHEP conference 2006, Moscow]\\[-2ex]
+
+
+\end{document}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 
+
